@@ -2,6 +2,14 @@
 
 This is a basic Apache Pinot example for ingesting real-time MySQL change logs using Debezium. To get started, follow the instructions below. This example is a reference for getting up and running using Docker compose. Please provide comments as issues to this repository, and feel free to make pull requests with useful recipes for querying change logs ingested from Debezium.
 
+### Example architecture
+
+The following diagram is a useful mental model to understand the nuts and bolts of a microservices architecture that uses Debezium and Pinot for change data capture and query.
+
+![https://i.imgur.com/SQqumLd.png](https://i.imgur.com/SQqumLd.png)
+
+For this example, we'll only focus on a single MySQL database and Debezium's MySQL Kafka Connector.
+
 ## Usage
 
 First, start up the Docker compose recipe. The compose file contains multiple containers, including Apache Pinot and MySQL, in addition to Apache Kafka and Zookeeper. Debezium also has a connector service that manages configurations for the different connectors that you plan to use for a variety of different databases. In this example we use MySQL.
